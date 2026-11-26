@@ -1,0 +1,194 @@
+//FUENTES
+@font-face {
+    font-family: 'Outfit';
+    src: url(fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YoungSerif';
+    src: url(fonts/young-serif/YoungSerif-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+//VARIABLES
+$bgcolor: #F3E5D8;
+$secondary-color: #FFF7FC;
+$text-color: #363231;
+$secondary-text-color: #666462;
+$primary-hcolor:#855137;
+$secondary-hcolor: #762548;
+
+//ESTILOS GENERALES
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+//ESTILOS BODY
+body{
+    background-color: $bgcolor;
+    font-family: 'Outfit', sans-serif;
+    padding-block: clamp(30px, 8vw, 120px);
+    color: $text-color;
+}
+
+//ESTILOS DE LA RECIPE CARD
+.recipe-card {
+    background-color: white;
+    width: 100%;
+    max-width: 736px;
+    padding: 40px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+}
+
+//ESTILOS DEL HEADER
+#header{
+    #header-image{
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+    h1{
+        font-family: 'YoungSerif', serif;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+    #description{
+        color: $secondary-text-color;
+        margin-bottom: 30px;
+    }
+}
+
+//ESTILOS DEL MAIN
+#main{
+    //ESTILOS DE LA PRIMERA SECCIÓN
+    #preparation-section{
+        background-color: $secondary-color;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 35px;
+
+        h2{
+            color: $secondary-hcolor;
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 5px;
+        }
+
+        ul{
+            margin-bottom: 0px;
+            color: $secondary-hcolor;
+            padding-left: 20px;
+        }
+
+        ul li{
+            padding-bottom: 10px;
+            padding-left: 20px;
+            color: $secondary-text-color;
+
+            &::marker{
+                color: $secondary-hcolor;
+                font-size: 0.75rem;
+            }
+
+            &:last-child{
+                padding-bottom: 0px;
+            }
+        }
+    }
+
+    //ESTILOS DEL RESTO DE SECCIONES
+    .main-sections{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 30px;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        h2{
+            color: $primary-hcolor;
+            font-family: 'YoungSerif', serif;
+            font-size: 1.75rem;
+            padding-bottom: 10px;
+        }
+        ul, ol{
+            padding-left: 20px;
+        }
+
+        ul li, ol li{
+            padding-left: 20px;
+            color: $secondary-text-color;
+            padding-bottom: 7px;
+            
+            &::marker{
+                color: $primary-hcolor;
+            }
+        }
+
+        ul li::marker{
+            font-size: 0.75rem;
+        }
+
+        ol li::marker{
+            font-weight: bold;
+            font-family: "Outfit", sans-serif;
+        }
+
+        p{
+            color: $secondary-text-color;
+        }
+
+        table{
+            width: 100%;
+            border: none;
+            tr{
+                border-bottom: 1px solid #ddd;
+                td, th{
+                    color: $secondary-text-color;
+                    padding: 13px;
+                    padding-right: 0px;
+                    padding-left: 30px;
+                }
+
+                th{
+                    width: 40%;
+                    font-weight: normal;
+                }
+
+                td{
+                    width: 40%;
+                    padding-left: 5px;
+                    color: $primary-hcolor;
+                    font-weight: bold;
+                }
+
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+        }
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+    }
+}
+
+@media (max-width:736px){
+    body{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .recipe-card {
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 0px;
+    }
+}
